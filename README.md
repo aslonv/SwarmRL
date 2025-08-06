@@ -4,14 +4,16 @@ A lightweight distributed framework for multi-agent reinforcement learning in C 
 
 ## Overview
 SwarmRL is a distributed reinforcement learning framework designed for training multiple agents to coordinate and collaborate in shared environments. Built in C for performance-critical applications, it provides a simple API for researchers and engineers working on multi-agent systems.
-Key Features
 
-Multi-agent coordination - Train agents to work together using shared rewards and communication
-Distributed training - Scale across multiple machines with master-worker architecture
-Multiple RL algorithms - Includes Q-Learning, DQN, with extensible architecture for custom algorithms
-Language flexibility - Native C implementation with Python bindings for research
-Lightweight design - Minimal dependencies, suitable for embedded systems and edge devices
-Real-time operation - Optimized for low-latency control applications
+
+## Key Features
+
+- Multi-agent coordination - Train agents to work together using shared rewards and communication
+- Distributed training - Scale across multiple machines with master-worker architecture
+- Multiple RL algorithms - Includes Q-Learning, DQN, with extensible architecture for custom algorithms
+- Language flexibility - Native C implementation with Python bindings for research
+- Lightweight design - Minimal dependencies, suitable for embedded systems and edge devices
+- Real-time operation - Optimized for low-latency control applications
 
 
 ## Installation
