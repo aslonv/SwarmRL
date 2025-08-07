@@ -22,15 +22,21 @@ Welcome to SwarmRL! This guide will help you get up and running with multi-agent
 ### Building from Source
 
 ```bash
-# Clone the repository
 git clone https://github.com/aslonv/swarmrl.git
 cd swarmrl
 
-# Build using the provided script
 chmod +x build.sh
 ./build.sh
 
-# Or build manually
 mkdir build && cd build
 cmake ..
 make -j4
+```
+
+### Docker Installation
+```bash
+docker build -t swarmrl .
+docker run -it swarmrl
+
+docker-compose up
+```
