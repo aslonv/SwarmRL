@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  master:
+    build: .
+    command: ./build/master
+    ports:
+      - "8080:8080"
+    networks:
+      - swarmrl-net
+    environment:
+      - SWARMRL_MODE=master
+
+  worker1:
+    build: .
+    command: ./build/worker master
+    depends_on:
+      - master
+    networks:
+      - swarmrl-net
+    environment:
+      - SWARMRL_MODE=worker
+      - SWARMRL_WORKER_ID=1
+
+  worker2:
+    build: .
+    command: ./build/worker master
+    depends_on:
+      - master
+    networks:
+      - swarmrl-net
+    environment:
+      - SWARMRL_MODE=worker
+      - SWARMRL_WORKER_ID=2
+
+  worker3:
+    build: .
+    command: ./build/worker master
+    depends_on:
+      - master
+    networks:
+      - swarmrl-net
+    environment:
+      - SWARMRL_MODE=worker
+      - SWARMRL_WORKER_ID=3
+
+  visualizer:
+    build: .
+    command: python3 -m http.server 8000 --directory visualization/web_dashboard
+    ports:
+      - "8000:8000"
+    networks:
+      - swarmrl-net
+
+networks:
+  swarmrl-net:
+    driver: bridge
